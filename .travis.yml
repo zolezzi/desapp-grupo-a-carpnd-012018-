@@ -1,0 +1,16 @@
+language: java
+sudo: required
+jdk:
+- oraclejdk8
+script:
+- mvn clean install -Dmaven.compiler.target=1.8 -Dmaven.compiler.source=1.8 && mvn  test
+  -B
+deploy:
+  provider: heroku
+  api_key:
+    secure: CCzp/1j/3pDIJDO9mQlGxA7rOPEw607RzKZnpLPFxvA88fHoHgj+c3PRiLO1+14Rq9/K+kPWFn9o7SD8/+4a5cUvOQcgth3p4FWV1OEotZGcS/Y9e6i5fm8oD4VAn3EjRLKq8xacZN6NudLn16HPeRsYAcdodpzpJitmidKFCGFZEL27t3DN4IDcpn2TKQLmWPxVCR8JHx1JJPHtI8lQ6DkVqQxuFpeqlKAqUKzP0VX+WM1Yb17GOe3gG6IQi4UZUvEHWxTSyyFI0v70+Z9wK1B6DMMsx7FIIud0KzmnZASAvi/4bggbF80pyLfTpxVrmqH8kPNa3BWL5kap9XjA6nmz9bI3DV1oMcioykBYNa/jGeMjQ7om6lDCGcpHPlzG+OFH0Hhx5xwNuKP6r8sjDJ9Nz9zXGhSldNyUCKAtMMgmNhCZeTfKm4EhWSzy3mm/vU/wUgH3bc3XfU1h9k44LyaeqyfA+L+TpgRObml+LTc2Bj68u5lb5Ypv6df/bXRLdwPw11Z92tIAslEzNUBm+VphRRP8UWpi9uQYoG9408/dmbgO3Nfqo3PoDJoORp8/U4t7ob2kzUx9bfEplvEAnvcq0NGo1cbzreIQbfIuvvaO2etvd9zwDNmfpj+hx2gR5gxza1Srd6fP/7X38MtKdb2P8lMKwuGj98dpMJT2KYQ=
+  app: desapp-grupo-a-carpnd
+  on:
+    repo: zolezzi/desapp-grupo-a-carpnd-012018
+repo: zolezzi/desapp-grupo-a-carpnd-012018
+
